@@ -29,7 +29,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
- 
+#include "contro.h"
 
 /** @addtogroup Template_Project
   * @{
@@ -141,7 +141,12 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
- 
+	g_u8MainEventCount++;
+	if(g_u8MainEventCount >=5)
+	{
+		g_u8MainEventCount = 0;
+		GetMotorPulse();
+	}
 }
 
 /******************************************************************************/

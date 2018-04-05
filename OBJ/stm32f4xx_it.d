@@ -35,3 +35,5 @@
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\stm32f4xx_it.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\stm32f4xx_it.o: contro.h
+..\obj\stm32f4xx_it.o: ..\SYSTEM\sys\sys.h

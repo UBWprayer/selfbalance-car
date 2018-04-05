@@ -124,6 +124,32 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 			}
 		}   		 
   } 
+	if(USART_RX_BUF[0] == '1')
+	{
+		TIM_SetCompare1(TIM3,100);
+		TIM_SetCompare3(TIM3,100);
+	}
+	if(USART_RX_BUF[0] == '2')
+	{
+		TIM_SetCompare1(TIM3,200);
+		TIM_SetCompare3(TIM3,200);
+	}
+	if(USART_RX_BUF[0] == '3')
+	{
+		TIM_SetCompare1(TIM3,300);
+		TIM_SetCompare3(TIM3,300);
+	}
+	if(USART_RX_BUF[0] == '4')
+	{
+		TIM_SetCompare1(TIM3,400);
+		TIM_SetCompare3(TIM3,400);
+	}
+	if(USART_RX_BUF[0] == '5')
+	{
+		TIM_SetCompare1(TIM3,500);
+		TIM_SetCompare3(TIM3,500);
+	}
+	USART_RX_STA = 0;
 #ifdef OS_TICKS_PER_SEC	 	//如果时钟节拍数定义了,说明要使用ucosII了.
 	OSIntExit();  											 
 #endif
