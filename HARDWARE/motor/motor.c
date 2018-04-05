@@ -164,82 +164,12 @@ u32	TIM2CH1_CAPTURE_VAL=0;	//输入捕获值(TIM2/TIM5是32位)
 u32 Left_Val = 0;
 void TIM2_IRQHandler(void)
 { 		    		  			    
-	if((TIM2CH1_CAPTURE_STA&0X80)==0)//还未成功捕获	
-	{
-		if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)//溢出
-		{	     
-			if(TIM2CH1_CAPTURE_STA&0X40)//已经捕获到高电平了
-			{
-				if((TIM2CH1_CAPTURE_STA&0X3F)==0X3F)//高电平太长了
-				{
-					TIM2CH1_CAPTURE_STA|=0X80;		//标记成功捕获了一次
-					TIM2CH1_CAPTURE_VAL=0XFFFFFFFF;
-				}else TIM2CH1_CAPTURE_STA++;
-			}	 
-		}
-		if(TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)//捕获1发生捕获事件
-		{	
-			if(TIM2CH1_CAPTURE_STA&0X40)		//捕获到一个下降沿 		
-			{	  			
-				TIM2CH1_CAPTURE_STA|=0X80;		//标记成功捕获到一次高电平脉宽
-			  TIM2CH1_CAPTURE_VAL=TIM_GetCapture1(TIM2);//获取当前的捕获值.
-	 			TIM_OC1PolarityConfig(TIM2,TIM_ICPolarity_Rising); //CC1P=0 设置为上升沿捕获
-				Left_Val=TIM2CH1_CAPTURE_STA&0X3F; 
-				Left_Val*=0XFFFFFFFF;		 		         //溢出时间总和
-				Left_Val+=TIM2CH1_CAPTURE_VAL;		   //得到总的高电平时间
-				TIM2CH1_CAPTURE_STA=0;
-			}else  								//还未开始,第一次捕获上升沿
-			{
-				TIM2CH1_CAPTURE_STA=0;			//清空
-				TIM2CH1_CAPTURE_STA|=0X40;		//标记捕获到了上升沿
-				TIM_Cmd(TIM2,ENABLE); 	//使能定时器5
-	 			TIM_SetCounter(TIM2,0);
-	 			TIM_OC1PolarityConfig(TIM2,TIM_ICPolarity_Falling);		//CC1P=1 设置为下降沿捕获
-				TIM_Cmd(TIM2,ENABLE ); 	//使能定时器5
-			}		    
-		}			     	    					   
- 	}
-	TIM_ClearITPendingBit(TIM2, TIM_IT_CC1|TIM_IT_Update); //清除中断标志位
+	TIM_ClearFlag(TIM2, TIM_FLAG_Update);
 }
 u8  TIM4CH1_CAPTURE_STA=0;	//输入捕获状态		    				
 u32	TIM4CH1_CAPTURE_VAL=0;	//输入捕获值(TIM2/TIM5是32位)
 u32 Right_Val = 0;
 void TIM4_IRQHandler(void)
 { 		    		  			    
-	if((TIM4CH1_CAPTURE_STA&0X80)==0)//还未成功捕获	
-	{
-		if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)//溢出
-		{	     
-			if(TIM4CH1_CAPTURE_STA&0X40)//已经捕获到高电平了
-			{
-				if((TIM4CH1_CAPTURE_STA&0X3F)==0X3F)//高电平太长了
-				{
-					TIM4CH1_CAPTURE_STA|=0X80;		//标记成功捕获了一次
-					TIM4CH1_CAPTURE_VAL=0XFFFFFFFF;
-				}else TIM4CH1_CAPTURE_STA++;
-			}	 
-		}
-		if(TIM_GetITStatus(TIM4, TIM_IT_CC1) != RESET)//捕获1发生捕获事件
-		{	
-			if(TIM4CH1_CAPTURE_STA&0X40)		//捕获到一个下降沿 		
-			{	  			
-				TIM4CH1_CAPTURE_STA|=0X80;		//标记成功捕获到一次高电平脉宽
-			  TIM4CH1_CAPTURE_VAL=TIM_GetCapture1(TIM4);//获取当前的捕获值.
-	 			TIM_OC1PolarityConfig(TIM4,TIM_ICPolarity_Rising); //CC1P=0 设置为上升沿捕获
-				Right_Val=TIM4CH1_CAPTURE_STA&0X3F; 
-				Right_Val*=0XFFFF;		 		         //溢出时间总和
-				Right_Val+=TIM4CH1_CAPTURE_VAL;		   //得到总的高电平时间
-				TIM4CH1_CAPTURE_STA=0;
-			}else  								//还未开始,第一次捕获上升沿
-			{
-				TIM4CH1_CAPTURE_STA=0;			//清空
-				TIM4CH1_CAPTURE_STA|=0X40;		//标记捕获到了上升沿
-				TIM_Cmd(TIM4,ENABLE ); 	//使能定时器5
-	 			TIM_SetCounter(TIM4,0);
-	 			TIM_OC1PolarityConfig(TIM4,TIM_ICPolarity_Falling);		//CC1P=1 设置为下降沿捕获
-				TIM_Cmd(TIM4,ENABLE ); 	//使能定时器5
-			}		    
-		}			     	    					   
- 	}
-	TIM_ClearITPendingBit(TIM4, TIM_IT_CC1|TIM_IT_Update); //清除中断标志位 
+	TIM_ClearFlag(TIM4, TIM_FLAG_Update);
 }
