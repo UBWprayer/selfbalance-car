@@ -2,13 +2,13 @@
 ..\obj\system_stm32f4xx.o: stm32f4xx.h
 ..\obj\system_stm32f4xx.o: ..\CORE\core_cm4.h
 ..\obj\system_stm32f4xx.o: D:\JRT\keil5\ARM\ARMCC\bin\..\include\stdint.h
-..\obj\system_stm32f4xx.o: ..\CORE\core_cmInstr.h
-..\obj\system_stm32f4xx.o: ..\CORE\core_cmFunc.h
+..\obj\system_stm32f4xx.o: D:\JRT\keil5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h
+..\obj\system_stm32f4xx.o: D:\JRT\keil5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h
 ..\obj\system_stm32f4xx.o: ..\CORE\core_cm4_simd.h
 ..\obj\system_stm32f4xx.o: system_stm32f4xx.h
 ..\obj\system_stm32f4xx.o: stm32f4xx_conf.h
 ..\obj\system_stm32f4xx.o: ..\FWLIB\inc\stm32f4xx_adc.h
-..\obj\system_stm32f4xx.o: ..\CORE\stm32f4xx.h
+..\obj\system_stm32f4xx.o: ..\USER\stm32f4xx.h
 ..\obj\system_stm32f4xx.o: ..\FWLIB\inc\stm32f4xx_crc.h
 ..\obj\system_stm32f4xx.o: ..\FWLIB\inc\stm32f4xx_dbgmcu.h
 ..\obj\system_stm32f4xx.o: ..\FWLIB\inc\stm32f4xx_dma.h
