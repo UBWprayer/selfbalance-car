@@ -142,7 +142,7 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
 	g_u8MainEventCount++;
-	if(g_u8MainEventCount >=5)
+	if(g_u8MainEventCount >= 10)
 	{
 		g_u8MainEventCount = 0;
 		GetMotorPulse();

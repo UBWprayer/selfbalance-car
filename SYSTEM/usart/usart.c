@@ -146,8 +146,8 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 	}
 	if(USART_RX_BUF[0] == '5')
 	{
-		TIM_SetCompare1(TIM3,500);
-		TIM_SetCompare3(TIM3,500);
+		TIM_SetCompare1(TIM3,498);
+		TIM_SetCompare3(TIM3,498);
 	}
 	USART_RX_STA = 0;
 #ifdef OS_TICKS_PER_SEC	 	//如果时钟节拍数定义了,说明要使用ucosII了.

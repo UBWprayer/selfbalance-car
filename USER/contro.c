@@ -7,7 +7,7 @@
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h" 
 
-unsigned char g_u8MainEventCount;
+unsigned long g_u8MainEventCount = 0;
 
 /******电机控制参数******/
 float g_fSpeedControlOut;
@@ -35,10 +35,10 @@ float g_fCarPosition;
 
 void GetMotorPulse(void)  //采集电机速度脉冲
 { 
-  g_s16LeftMotorPulse = TIM_GetCounter(TIM2);
-  g_s16RightMotorPulse= TIM_GetCounter(TIM4);
-  TIM2->CNT = 0;
-  TIM4->CNT = 0;   //清零
+  g_s16LeftMotorPulse = -cnt1;
+  g_s16RightMotorPulse= cnt2;
+  cnt1 = 0;
+  cnt2 = 0;   //清零
   g_s32LeftMotorPulseSigma +=  g_s16LeftMotorPulse;
   g_s32RightMotorPulseSigma += g_s16RightMotorPulse; 
 }

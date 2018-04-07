@@ -19,8 +19,7 @@ int main(void)
 	uart_init(115200);		//初始化串口波特率为115200
 	MPU_Init();					//初始化MPU6050
 	motor_init();
-	TIM2_Encoder_Init();
-	TIM4_Encoder_Init();
+	Encoder_Init();
 	while(mpu_dmp_init())
 	{
  		delay_ms(200);
@@ -28,8 +27,8 @@ int main(void)
  	while(1)
 	{
 		
-		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
-		{ 
+//		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
+//		{ 
 //			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 //			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
 //			printf("Pitch: %f Roll: %f Yaw: %f\n",pitch,roll,yaw);
@@ -40,6 +39,6 @@ int main(void)
 //			delay_ms(1000);
 			printf("Left: %d Right: %d\n",g_s16LeftMotorPulse,g_s16RightMotorPulse);
 			delay_ms(1000);
-		}
+//		}
 	} 	
 }

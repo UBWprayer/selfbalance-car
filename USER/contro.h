@@ -3,10 +3,12 @@
 
 #include "sys.h"
 
-extern unsigned char g_u8MainEventCount;
+extern unsigned long g_u8MainEventCount;
 
 extern short  g_s16LeftMotorPulse;
 extern short  g_s16RightMotorPulse;
+extern int  g_s32LeftMotorPulseSigma;
+extern int  g_s32RightMotorPulseSigma;
 
 void GetMotorPulse(void);
 
