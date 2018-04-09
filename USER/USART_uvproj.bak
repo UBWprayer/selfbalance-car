@@ -364,7 +364,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\FWLIB\STM32F4xx_StdPeriph_Driver\inc;..\USER;..\FWLIB\inc;..\HARDWARE\eMPL;..\HARDWARE\IIC;..\HARDWARE\motor;..\HARDWARE\MPU6050;..\SYSTEM\systick</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\FWLIB\STM32F4xx_StdPeriph_Driver\inc;..\USER;..\FWLIB\inc;..\HARDWARE\eMPL;..\HARDWARE\IIC;..\HARDWARE\motor;..\HARDWARE\MPU6050;..\SYSTEM\timtick</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -478,9 +478,9 @@
               <FilePath>..\SYSTEM\usart\usart.c</FilePath>
             </File>
             <File>
-              <FileName>systick.c</FileName>
+              <FileName>timtick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\SYSTEM\systick\systick.c</FilePath>
+              <FilePath>..\SYSTEM\timtick\timtick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -526,6 +526,11 @@
               <FileName>stm32f4xx_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FWLIB\src\stm32f4xx_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FWLIB\src\stm32f4xx_exti.c</FilePath>
             </File>
           </Files>
         </Group>

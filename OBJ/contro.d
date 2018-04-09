@@ -35,6 +35,7 @@
 ..\obj\contro.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\contro.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\contro.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\contro.o: D:\JRT\keil5\ARM\ARMCC\bin\..\include\stdlib.h
 ..\obj\contro.o: ..\SYSTEM\delay\delay.h
 ..\obj\contro.o: ..\SYSTEM\usart\usart.h
 ..\obj\contro.o: D:\JRT\keil5\ARM\ARMCC\bin\..\include\stdio.h

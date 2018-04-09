@@ -4,7 +4,7 @@
 #include "motor.h"
 #include "stm32f4xx_exti.h"
 
-u32 cnt1,cnt2;
+long cnt1,cnt2;
 
 void motor_init()
 {
@@ -55,10 +55,44 @@ void motor_init()
 	
 	TIM_Cmd(TIM3, ENABLE);  //Ê¹ÄÜTIM8
 	
-	TIM_SetCompare1(TIM3,999);
+	TIM_SetCompare1(TIM3,0);
 	TIM_SetCompare2(TIM3,0);
-	TIM_SetCompare3(TIM3,999);
+	TIM_SetCompare3(TIM3,0);
 	TIM_SetCompare4(TIM3,0);
+}
+
+void Motor_LeftSpeed(int speed)
+{
+	if(speed >= 0)
+	{
+		TIM_SetCompare1(TIM3,speed);
+		TIM_SetCompare2(TIM3,0);
+	}
+	else
+	{
+		TIM_SetCompare1(TIM3,0);
+		TIM_SetCompare2(TIM3,-speed);
+	}
+}
+
+void Motor_RightSpeed(int speed)
+{
+	if(speed >= 0)
+	{
+		TIM_SetCompare3(TIM3,speed);
+		TIM_SetCompare4(TIM3,0);
+	}
+	else
+	{
+		TIM_SetCompare3(TIM3,0);
+		TIM_SetCompare4(TIM3,-speed);
+	}
+}
+
+void Motor_Speed(int lspeed,int rspeed)
+{
+	Motor_LeftSpeed(lspeed);
+	Motor_RightSpeed(rspeed);
 }
 
 void GPIO_Encoder_Init(void)

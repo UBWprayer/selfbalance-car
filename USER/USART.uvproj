@@ -364,7 +364,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\FWLIB\STM32F4xx_StdPeriph_Driver\inc;..\USER;..\FWLIB\inc;..\HARDWARE\eMPL;..\HARDWARE\IIC;..\HARDWARE\motor;..\HARDWARE\MPU6050;..\SYSTEM\systick</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\FWLIB\STM32F4xx_StdPeriph_Driver\inc;..\USER;..\FWLIB\inc;..\HARDWARE\eMPL;..\HARDWARE\IIC;..\HARDWARE\motor;..\HARDWARE\MPU6050;..\SYSTEM\timtick</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -422,16 +422,16 @@
               <FileType>1</FileType>
               <FilePath>.\system_stm32f4xx.c</FilePath>
             </File>
-            <File>
-              <FileName>contro.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\contro.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>HARDWARE</GroupName>
           <Files>
+            <File>
+              <FileName>contro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\contro.c</FilePath>
+            </File>
             <File>
               <FileName>inv_mpu.c</FileName>
               <FileType>1</FileType>
@@ -478,9 +478,9 @@
               <FilePath>..\SYSTEM\usart\usart.c</FilePath>
             </File>
             <File>
-              <FileName>systick.c</FileName>
+              <FileName>timtick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\SYSTEM\systick\systick.c</FilePath>
+              <FilePath>..\SYSTEM\timtick\timtick.c</FilePath>
             </File>
           </Files>
         </Group>

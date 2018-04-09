@@ -65,7 +65,7 @@ void delay_us(u32 nus)
 	told=SysTick->VAL;        	//刚进入时的计数器值
 	while(1)
 	{
-		tnow=SysTick->VAL;	
+		tnow=SysTick->VAL;
 		if(tnow!=told)
 		{	    
 			if(tnow<told)tcnt+=told-tnow;//这里注意一下SYSTICK是一个递减的计数器就可以了.

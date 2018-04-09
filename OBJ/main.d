@@ -39,8 +39,8 @@
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: D:\JRT\keil5\ARM\ARMCC\bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\motor\motor.h
-..\obj\main.o: ..\SYSTEM\systick\systick.h
 ..\obj\main.o: contro.h
+..\obj\main.o: ..\SYSTEM\timtick\timtick.h
 ..\obj\main.o: ..\HARDWARE\MPU6050\mpu6050.h
 ..\obj\main.o: ..\HARDWARE\IIC\myiic.h
 ..\obj\main.o: ..\HARDWARE\eMPL\inv_mpu.h

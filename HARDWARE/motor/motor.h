@@ -3,10 +3,10 @@
 
 #include "sys.h"
 
-extern u32 cnt1,cnt2;
+extern long cnt1,cnt2;
 
 void motor_init(void);
 void Encoder_Init(void);
-
+void Motor_Speed(int lspeed,int rspeed);
 
 #endif

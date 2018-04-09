@@ -11,5 +11,6 @@ extern int  g_s32LeftMotorPulseSigma;
 extern int  g_s32RightMotorPulseSigma;
 
 void GetMotorPulse(void);
+void AngleControl(void);
 
 #endif

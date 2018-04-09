@@ -421,8 +421,8 @@
       <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\SYSTEM\systick\systick.c</PathWithFileName>
-      <FilenameWithoutPath>systick.c</FilenameWithoutPath>
+      <PathWithFileName>..\SYSTEM\timtick\timtick.c</PathWithFileName>
+      <FilenameWithoutPath>timtick.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -530,6 +530,19 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_tim.c</PathWithFileName>
       <FilenameWithoutPath>stm32f4xx_tim.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>21</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\FWLIB\src\stm32f4xx_exti.c</PathWithFileName>
+      <FilenameWithoutPath>stm32f4xx_exti.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
